@@ -1,0 +1,403 @@
+/* Variáveis CSS - Tema Lofi Roxo */
+:root {
+  --primary: #8a2be2; /* Roxo vibrante */
+  --primary-dark: #6a1fb0;
+  --primary-light: #a64dff;
+  --accent: #ff6ec7; /* Rosa neon para acentos */
+  --background: #1a1a2e; /* Fundo escuro com tom azulado */
+  --card-bg: #252541; /* Fundo dos cards um pouco mais claro */
+  --text: #e6e6fa; /* Texto claro com tom lavanda */
+  --text-secondary: #b8b8d4; /* Texto secundário */
+  --success: #64ffda; /* Verde mint */
+  --danger: #ff5252; /* Vermelho neon */
+  --shadow: rgba(0, 0, 0, 0.3);
+  --border-radius: 8px;
+}
+
+/* Reset e estilos gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.3s ease;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  min-height: 100vh;
+  padding: 40px 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(26, 26, 46, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(138, 43, 226, 0.2);
+}
+
+/* Cabeçalho */
+header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h1 {
+  color: var(--primary-light);
+  margin-bottom: 25px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+  letter-spacing: 1px;
+}
+
+h1::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: var(--primary-light);
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 8px;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+/* Formulário */
+form {
+  display: flex;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 15px;
+  border: 2px solid var(--card-bg);
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  font-size: 16px;
+  color: var(--text);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 10px rgba(138, 43, 226, 0.3), inset 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+input[type="text"]::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+button {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+}
+
+form button {
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form button::after {
+  content: '+';
+  margin-left: 5px;
+  font-size: 20px;
+}
+
+button:hover {
+  background: linear-gradient(135deg, var(--primary-light), var(--primary));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(138, 43, 226, 0.3);
+}
+
+/* Filtros */
+.filtros {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  gap: 15px;
+}
+
+.filtro {
+  background-color: var(--card-bg);
+  color: var(--text-secondary);
+  border: 1px solid rgba(138, 43, 226, 0.2);
+  border-radius: var(--border-radius);
+  padding: 10px 20px;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.filtro::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: -1;
+}
+
+.filtro:hover::before {
+  opacity: 0.1;
+}
+
+.filtro.ativo {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  border-color: var(--primary);
+  box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+}
+
+/* Lista de tarefas */
+.lista-tarefas {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 25px;
+  box-shadow: 0 8px 20px var(--shadow);
+  border: 1px solid rgba(138, 43, 226, 0.2);
+}
+
+.tarefa {
+  display: flex;
+  align-items: center;
+  padding: 18px;
+  border-bottom: 1px solid rgba(138, 43, 226, 0.1);
+  transition: all 0.3s;
+  animation: fadeIn 0.5s ease-out;
+  border-radius: var(--border-radius);
+  margin-bottom: 8px;
+  background-color: rgba(37, 37, 65, 0.7);
+}
+
+.tarefa:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.tarefa:hover {
+  background-color: rgba(37, 37, 65, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tarefa.concluida {
+  background-color: rgba(37, 37, 65, 0.4);
+}
+
+.tarefa.concluida .tarefa-texto {
+  text-decoration: line-through;
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+.tarefa-conteudo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+/* Estilização personalizada do checkbox */
+.tarefa-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  margin-right: 15px;
+  cursor: pointer;
+  position: relative;
+  background-color: transparent;
+  transition: all 0.3s;
+}
+
+.tarefa-checkbox:checked {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.tarefa-checkbox:checked::after {
+  content: '✓';
+  position: absolute;
+  color: white;
+  font-size: 14px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tarefa-checkbox:hover {
+  border-color: var(--primary-light);
+  box-shadow: 0 0 8px rgba(138, 43, 226, 0.4);
+}
+
+.tarefa-texto {
+  font-size: 16px;
+  color: var(--text);
+  transition: all 0.3s;
+}
+
+.tarefa-acoes {
+  display: flex;
+  gap: 15px;
+}
+
+.tarefa-acoes button {
+  background-color: transparent;
+  color: var(--text-secondary);
+  padding: 8px;
+  font-size: 16px;
+  box-shadow: none;
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+}
+
+.tarefa-acoes button:hover {
+  background-color: rgba(138, 43, 226, 0.1);
+  color: var(--accent);
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.btn-excluir:hover {
+  color: var(--danger);
+}
+
+.sem-tarefas {
+  text-align: center;
+  color: var(--text-secondary);
+  padding: 20px;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  body {
+    padding: 20px 0;
+  }
+  
+  .container {
+    padding: 15px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  form {
+    flex-direction: column;
+  }
+
+  input[type="text"] {
+    border-radius: var(--border-radius);
+    margin-bottom: 10px;
+  }
+
+  form button {
+    border-radius: var(--border-radius);
+    width: 100%;
+  }
+
+  .filtros {
+    flex-wrap: wrap;
+  }
+  
+  .filtro {
+    flex: 1;
+    min-width: 80px;
+    text-align: center;
+    padding: 8px 12px;
+  }
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(138, 43, 226, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(138, 43, 226, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(138, 43, 226, 0);
+  }
+}
+
+/* Efeito de brilho nos elementos */
+.tarefa-checkbox:checked {
+  animation: pulse 1.5s infinite;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-light);
+}
